@@ -1,0 +1,6 @@
+<div class='layout-sidebar'>
+  <div class='menu'>
+    <p-button icon='pi pi-bars' styleClass='p-button-lg p-button-outlined p-button-secondary' (onClick)='menu ? menu = false : menu = true'></p-button>
+  </div>
+</div>
+<p-sidebar [(visible)]='menu' [modal]='false' [showCloseIcon]='false'></p-sidebar>

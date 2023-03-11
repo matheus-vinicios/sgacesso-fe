@@ -1,0 +1,32 @@
+<div class='layout-topbar'>
+  <div class='logo'>
+    <div class='text-center'>
+      <div class='font-bold mb-1'>&#123;g&#125;.sys</div>
+      <div class='text-xs'>GENTILE SISTEMAS</div>
+    </div>
+  </div>
+  <div class='menu-user'>
+    <p-button icon='pi pi-user' styleClass='p-button-lg p-button-outlined p-button-secondary' (click)='perfilOverlayPanel.toggle($event)'></p-button>
+  </div>
+</div>
+<p-overlayPanel #perfilOverlayPanel [style]='{ width: "300px" }'>
+  <ng-template pTemplate>
+    <div class='bg-white border-round-xl m-2'>
+      <div class='flex'>
+        <div class='m-2'>
+          <p-avatar image='https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png' size='xlarge' shape='circle'></p-avatar>
+        </div>
+        <div class='flex-grow-1 flex align-items-center m-2'>
+          <div class='flex flex-column'>
+            <div class='text-sm font-bold'>{{ keycloakProfile?.firstName }}</div>
+            <div class='text-sm font-light'>{{ keycloakProfile?.username }}</div>
+          </div>
+        </div>
+      </div>
+      <div class='m-2'>
+        <p-button icon='pi pi-verified' styleClass='p-button p-button-outlined p-button-secondary w-full mb-2' label='Configurações de conta'></p-button>
+      </div>
+    </div>
+    <p-button icon='pi pi-sign-out' styleClass='p-button p-button-text p-button-danger border-noround w-full' label='Sair da conta'  (onClick)="logout()"></p-button>
+  </ng-template>
+</p-overlayPanel>
